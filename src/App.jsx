@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import './App.css';
+import Navigation from './components/Navigation';
+import AuthorSrc from './assets/symbol.png';
+import { useState } from 'react';
+import SideMenu from './components/SideMenu';
+import MainOverview from './components/main/MainOverview';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mainNavigation, setMainNavigation] = useState(null);
+  const [sideNavigation, setSideNavigation] = useState(null);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="w-screen h-screen bg-gray-200 ">
+      <Navigation setter={setMainNavigation} />
+      <SideMenu navValue={mainNavigation} setter={setSideNavigation} />
+      <MainOverview control={{ main: mainNavigation, sub: sideNavigation }} />
+      <img
+        src={AuthorSrc}
+        alt=""
+        className=" fixed -translate-x-[50%] -translate-y-[50%] top-[50%] left-[50%] "
+      />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
