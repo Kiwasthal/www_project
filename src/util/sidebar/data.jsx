@@ -12,8 +12,14 @@ export const photo = [
   { title: 'Μέση Γη', tag: 'middleEarth' },
 ];
 
-export const bio = [
-  { title: 'Αυτοβιογραφία', tag: 'auto' },
-  { title: 'Μυθοπλασίας', tag: 'fantasy' },
-  { title: 'Άλλου Προσώπου', tag: 'other' },
+export const adminActions = [
+  { title: 'Πρόσθεση', tag: 'add' },
+  { title: 'Διαγραφή', tag: 'remove' },
+  { title: 'Αλλαγή  ', tag: 'change' },
+];
+
+export const auth = [
+  { title: 'Είσοδος', tag: 'login' },
+  { title: 'Έξοδος', tag: 'logout' },
+  { title: 'Εγγραφή', tag: 'register' },
 ];
